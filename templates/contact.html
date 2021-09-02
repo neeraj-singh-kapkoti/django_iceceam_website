@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {%block title %} contact {%endblock title %} {%block body %}
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100" alt="contact">
+</div>
+
+
+
+<div class="container">
+    <div class="panel panel-default" style="margin:0 auto;width:500px">
+        <div class="panel-heading">
+            <h2 class="panel-title">Contact us</h2>
+        </div>
+        <div class="panel-body">
+            <form method="post" action="/contact">
+                {% csrf_token %}
+                <div class="form-group">
+
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-lg-2 control-label">phone no</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Your phone no">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="desc" class="col-lg-2 control-label"> Message</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="4" id="desc" name="desc" placeholder="Tell me what about you want to contact me"></textarea>
+                    </div>
+                </div>
+                <input class="btn btn-primary my-2" type="submit" value="Submit">
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{%endblock body %}
